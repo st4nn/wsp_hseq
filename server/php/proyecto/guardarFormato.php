@@ -37,7 +37,8 @@
    $Respuesta['Error'] = "";
    
 
-   $sql = "INSERT INTO Formatos(idLogin, Formato, Datos) VALUES (
+   $sql = "INSERT INTO Formatos(id, idLogin, Formato, Datos) VALUES (
+               " . $datos->id . ",
                '" . $idUsuario . "',
                '" . $datos->Formato . "',
                '" . str_replace("\\\\", "\\", json_encode($datos)) . "'
@@ -50,7 +51,13 @@
       $Respuesta['Error'] .= "\n Hubo un error desconocido " . $link->error;
    } else
    {
-      $nuevoId = $link->insert_id;
+      if ($datos->id == 'NULL')
+      {
+         $nuevoId = $link->insert_id;
+      } else
+      {
+         $nuevoId = $datos->id;
+      }
       $Respuesta['datos'] = $nuevoId;
 
       $obj = notificarMensaje($datos, $idUsuario, $nuevoId);
@@ -77,7 +84,7 @@
          $mensaje .= 'Gracias por su participación';
 
          $obj = EnviarCorreo($Usuario['Correo'] , "Diligenciamiento de " . $fila['Nombre'], $mensaje);
-
+         
          return $obj;
       }
    }

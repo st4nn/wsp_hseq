@@ -43,7 +43,7 @@ function iniciarModulo()
                                     confirmButtonColor: "#e67e22",
                                     confirmButtonText: "Sí, limpiar el formulario!",
                                     cancelButtonColor : "#9b59b6",
-                                    cancelButtonText: "No, voy a revisar éste!",
+                                    cancelButtonText: "No, voy a revisar éste, muestrame el PDF!",
                                     closeOnConfirm: true,
                                     closeOnCancel: true },
                                 function (isConfirm) {
@@ -53,6 +53,9 @@ function iniciarModulo()
                                         $("#txtFormato1_id").val('NULL');
                                         $("#txtFormato1_Formato").val(1);
                                     } else {
+                                        var url = "server/formatos/planDeViaje.php?i=" + data.datos;
+                                        var win = window.open(url, "_blank", "directories=no, location=no, menubar=no, resizable=yes, scrollbars=yes, statusbar=no, tittlebar=no");
+                                        win.focus();
                                         $("#txtFormato1_id").val(data.datos)
                                         $("#txtFormato1_Formato").val(1);
                                         

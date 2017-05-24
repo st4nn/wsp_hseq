@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body
+{
+	height: 100%;
+	font-family: 'Montserrat';
+	width: auto;
+}
+#cntLogin_Img2
+{
+	background: url('../img/bright.png') no-repeat;
+	background-size: 100% 100%;
+	width: 50%;
+    height: 100vh;
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+.colorRojo
+{
+	color: #ff4337;
+}
+
+#Login
+{
+	padding: 4em;
+	background: white;
+	border: solid 1px #d8dde6;
+	border-radius: 6px;
+	width: 60%;
+	margin: auto;
+}
+#Login input
+{
+	border: solid 1px #d8dde6;
+	border-radius: 2px;
+	height: 3em;
+	padding: 8px;
+	width: 100%;
+}
+#Login label
+{
+	text-align: right;
+	font-size: 0.8em;
+	width: 100%;
+	margin-top: 0.4em;
+	margin-bottom: 1em;
+}
+.login_Footer
+{
+	bottom: 5px;
+	position: absolute;
+	width: 100%;
+}
+#cntLogin_1
+{
+	background: #d9d9d6;
+	text-align: center;
+	height: 100vh;
+	position:absolute;
+	width: 50%;
+}
+.t-left
+{
+	text-align: left;
+}
+
+#btnLogin_Submit
+{
+	background: #ff4337;
+	color: white;
+	font-size: 1.3em;
+	margin-top: 2em;
+	width: 100%;
+}
+
+#btnLogin_Submit:hover
+{
+	background: #1e242b;
+	cursor: pointer;
+}
+
+
+@media (max-width: 860px) 
+{
+	#cntLogin_Img2
+	{
+		display: none;
+	}
+	#cntLogin_1
+	{
+		width: 100%;
+	}
+}

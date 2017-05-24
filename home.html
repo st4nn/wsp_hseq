@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Evaluación y Aprobación de Viajes</title>
+
+        <!-- Vendor CSS -->
+        
+        <link href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">        
+        <link href="vendors/bower_components/google-material-color/dist/palette.css" rel="stylesheet">
+
+        <link href="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+        <link href="vendors/sweetalert/sweetalert.css" rel="stylesheet">
+        
+        <!-- CSS -->
+        <link href="css/app.min.1.css" rel="stylesheet">
+        <link href="css/app.min.2.css" rel="stylesheet"> 
+        
+    </head>
+    <body data-ma-header="red-400">
+        <header id="header" class="media">
+
+        </header>
+
+        <section id="main">
+            <aside id="s-main-menu" class="sidebar">
+            </aside>
+
+            <section id="content">
+                <div class="container">
+                    <form  id="frmFormato1" class="form-horizontal">
+                        <input type="hidden" id="txtFormato1_id" value="NULL" class="guardar">
+                        <input type="hidden" id="txtFormato1_Formato" value="1" class="guardar">
+                        <input type="hidden" id="txtFormato1_Valoracion_F1" class="guardar">
+                        <input type="hidden" id="txtFormato1_Valoracion_F2" class="guardar">
+                        <input type="hidden" id="txtFormato1_Valoracion_F3" class="guardar">
+                        <input type="hidden" id="txtFormato1_Valoracion_Total" class="guardar">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body card-padding">
+                                    <h4>Este reporte debe ser completado antes del viaje, basado en el procedimiento local, para evaluar el nivel de riesgo. Debe ser aprobado basado en el nivel de riesgo (ver abajo). Se requiere un solo formato si el viaje es realizado en convoy.</h4>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-header">
+                                        <h2>A. Generalidades del viaje</h2>
+                                    </div>
+                                </div>
+                                <div class="card-body card-padding">
+                                    
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Motivo del viaje:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P1" class="form-control guardar input-sm" placeholder="Motivo del viaje">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">N°  Proyecto:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P2" class="form-control guardar input-sm" placeholder="N°  Proyecto">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Area:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P65" class="form-control guardar input-sm" placeholder="Area">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Locación responsable viaje:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P3" class="form-control guardar input-sm" placeholder="Locación responsable viaje">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Nombre del Gerente del Viaje /PM:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P4" class="form-control guardar input-sm" placeholder="Nombre del Gerente del Viaje /PM">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Lugar de Salida:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P5" class="form-control guardar input-sm" placeholder="Lugar de Salida">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Fecha de Salida:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P6" class="form-control guardar input-sm" placeholder="Fecha de Salida">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Hora de Salida:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P7" class="form-control guardar input-sm" placeholder="Hora de Salida">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <p>Responda estas preguntas…</p>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Es el viaje necesario?</label>
+                                                <div class="fg-line">
+                                                    <div class="select">
+                                                        <select id="txtFormato1_P8" class="form-control guardar">
+                                                            <option value="Si">Si</option>
+                                                            <option value="No">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Se realizó la reunión de planificación pre-viaje?</label>
+                                                <div class="fg-line">
+                                                    <div class="select">
+                                                        <select id="txtFormato1_P9" class="form-control guardar">
+                                                            <option value="Si">Si</option>
+                                                            <option value="No">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Nombre del Líder Viaje/Convoy:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P10" class="form-control guardar input-sm" placeholder="Nombre del Líder Viaje/Convoy">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Lugar de Destino:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P11" class="form-control guardar input-sm" placeholder="Lugar de Destino">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Fecha Estimada de Llegada:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P12" class="form-control guardar input-sm" placeholder="Fecha Estimada de Llegada">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Hora Estimada deLlegada:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P13" class="form-control guardar input-sm" placeholder="Hora Estimada Llegada">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Distancia Estimada:</label>
+                                                <div class="fg-line">
+                                                    <input type="text" id="txtFormato1_P14" class="form-control guardar input-sm" placeholder="Distancia Estimada">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">Total Vehículos:</label>
+                                                <div class="fg-line">
+                                                    <input type="number" min="0" id="txtFormato1_P15" class="form-control guardar input-sm" placeholder="Total Vehículos">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">No de Conductores:</label>
+                                                <div class="fg-line">
+                                                    <input type="number" min="0" id="txtFormato1_P16" class="form-control guardar input-sm" placeholder="No de Conductores">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="form-label">No de Pasajeros:</label>
+                                                <div class="fg-line">
+                                                    <input type="number" min="0" id="txtFormato1_P17" class="form-control guardar input-sm" placeholder="No de Pasajeros">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-header">
+                                        <h2>B. Cuestionario Pre viaje</h2>
+                                    </div>
+                                </div>
+                                <div class="card-body card-padding">
+                                    <h3>Ésta información debe ser revisada durante la reunión Pre-viaje y evaluada por el Gerente/Supervisor responsable del viaje.</h3>
+
+                                    <div class="row">
+                                        <div class="form-group ">
+                                            <div class="col-sm-8">
+                                                <label class="form-label">1) Los vehículos cumplen con los requerimientos establecidos en la inspección de vehículo?</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="fg-line">
+                                                    <div class="select">
+                                                        <select id="txtFormato1_P18" class="form-control guardar input-sm" required>
+                                                            <option value="">Seleccione un Opción</option>
+                                                            <option value="Si">Si</option>
+                                                            <option value="No">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="form-group ">
+                                            <div class="col-sm-8">
+                                                <label class="form-label">2) Ha revisado el Análisis de Peligros de la ruta "RHA" para identificar las áreas de alto riesgo, horas de contacto?</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="fg-line">
+                                                    <div class="select">
+                                                        <select id="txtFormato1_P19" class="form-control guardar input-sm" required>
+                                                            <option value="">Seleccione un Opción</option>
+                                                            <option value="Si">Si</option>
+                                                            <option value="No">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="form-group ">
+                                            <div class="col-sm-8">
+                                                <label class="form-label">3) Se ha revisado estado de fatiga y condiciones  (paradas planificadas para comer y descansar, horas de trabajo, horas de  manejo, puntos críticos de la vía)</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="fg-line">
+                                                    <div class="select">
+                                                        <select id="txtFormato1_P20" class="form-control guardar input-sm" required>
+                                                            <option value="">Seleccione un Opción</option>
+                                                            <option value="Si">Si</option>
+                                                            <option value="No">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="form-group ">
+                                            <div class="col-sm-8">
+                                                <label class="form-label">4) Conocen los conductores y pasajeros el protocolo de notificación en caso de emergencia y se ha notificado este viaje al personal en el destino?</label>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="fg-line">
+                                                    <div class="select">
+                                                        <select id="txtFormato1_P21" class="form-control guardar input-sm" required>
+                                                            <option value="">Seleccione un Opción</option>
+                                                            <option value="Si">Si</option>
+                                                            <option value="No">No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-header">
+                                        <h2>C. Evaluación de Riesgos</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-4">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4>FACTORES FISICOS</h4>
+                                            </div>
+                                            <div>
+                                                <div class="card-body card-padding">
+                                                    <div>
+                                                        <h4>1 - Distancia desde la Salida / Horas</h4>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P22" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="1">
+                                                                <i class="input-helper"></i>
+                                                                De 1 Hr a 2 Hr 
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P23" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="2">
+                                                                <i class="input-helper"></i>
+                                                                De 2 Hr a 4 Hr 
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P24" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="3">
+                                                                <i class="input-helper"></i>
+                                                                De 4 Hr a 6 Hr 
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P25" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="4">
+                                                                <i class="input-helper"></i>
+                                                                Mayor a 6 Hr 
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <h4>2 - Clima - Terreno</h4>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P26" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="1">
+                                                                <i class="input-helper"></i>
+                                                                Seco
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P27" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="2">
+                                                                <i class="input-helper"></i>
+                                                                Viento
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P28" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="3">
+                                                                <i class="input-helper"></i>
+                                                                Lluvia
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P29" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="4">
+                                                                <i class="input-helper"></i>
+                                                                Niebla, Grava, barro 
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <h4>3 - Condiciones de la Vía</h4>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P30" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="1">
+                                                                <i class="input-helper"></i>
+                                                                Vía Principal Pavimentada
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P31" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="2">
+                                                                <i class="input-helper"></i>
+                                                                Vía Secundaria Pavimentada
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P32" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="3">
+                                                                <i class="input-helper"></i>
+                                                                Vía terciaria Pavimentada
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P33" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="4">
+                                                                <i class="input-helper"></i>
+                                                                Vía terciaria sin pavimento 
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <h4>4 - Comunicaciones</h4>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P34" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="1">
+                                                                <i class="input-helper"></i>
+                                                                Con señal de teléfono celular o satelital/radio
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P35" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="2">
+                                                                <i class="input-helper"></i>
+                                                                Con señal de teléfono celular  intermitente o zonas muertas
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P36" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="3">
+                                                                <i class="input-helper"></i>
+                                                                Sin comunicación, pero en convoy o caravana
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P37" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="4">
+                                                                <i class="input-helper"></i>
+                                                                Sin comunicación, sin convoy o caravana
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <h4>5 - Condiciones Publicas</h4>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P38" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="1">
+                                                                <i class="input-helper"></i>
+                                                                Presencia de Autoridades sobre la ruta
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P39" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="2">
+                                                                <i class="input-helper"></i>
+                                                                Incidentes de Orden Publico en la ruta
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P40" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="3">
+                                                                <i class="input-helper"></i>
+                                                                Bloqueos, paros y/o protestas en la ruta
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P41" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="1" data-idValor="4">
+                                                                <i class="input-helper"></i>
+                                                                Bloqueos, paros y/o protestas en la ruta
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4>FACTORES HUMANOS</h4>
+                                            </div>
+                                            <div>
+                                                <div class="card-body card-padding">
+                                                    <div>
+                                                        <h4>6 - Evaluación de condiciones de fatiga</h4>
+                                                        <h5>Con más de 8 hs. Dormidas</h5>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P42" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="2" data-idValor="1">
+                                                                <i class="input-helper"></i>
+                                                                Hrs. trabajadas + hrs. previstas de viaje < 12 hs.   
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P43" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="2" data-idValor="2">
+                                                                <i class="input-helper"></i>
+                                                                Hrs. trabajadas + hrs. previstas de viaje < 14 hs.
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P44" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="2" data-idValor="3">
+                                                                <i class="input-helper"></i>
+                                                                Hrs. trabajadas + hrs. previstas de viaje < 16 hs.   
+                                                            </label>
+                                                        </div>
+                                                    
+                                                    <h5>Con menos de 8 hs. Dormidas</h5>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P45" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="2" data-idValor="1">
+                                                                <i class="input-helper"></i>
+                                                                Hrs. trabajadas + hrs. previstas de viaje < 12 hs.   
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P46" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="2" data-idValor="2">
+                                                                <i class="input-helper"></i>
+                                                                Hrs. trabajadas + hrs. previstas de viaje < 14 hs.
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P47" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="2" data-idValor="3">
+                                                                <i class="input-helper"></i>
+                                                                Hrs. trabajadas + hrs. previstas de viaje < 16 hs.   
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4>OTROS FACTORES DE RIESGO</h4>
+                                            </div>
+                                            <div>
+                                                <div class="card-body card-padding">
+                                                    <div>
+                                                        <h4>7. Horario de viaje</h4>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P48" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="3" data-idValor="1">
+                                                                <i class="input-helper"></i>
+                                                                Manejo desde 06:31 hrs. hasta 18:29 hrs.
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P49" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="2" data-idValor="2">
+                                                                <i class="input-helper"></i>
+                                                                Manejo desde 18:30 hrs. hasta 23:00 hrs.
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P50" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="3" data-idValor="3">
+                                                                <i class="input-helper"></i>
+                                                                Manejo desde 23:01 hrs. hasta 06:30 hrs.
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <h4>8- Motocicletas,ciclistas y Peatones transitando sobre la ruta</h4>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P51" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="3" data-idValor="1">
+                                                                <i class="input-helper"></i>
+                                                                No hay Evidencia de Transito de Motociclistas y Peatones sobre la ruta
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P52" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="3" data-idValor="2">
+                                                                <i class="input-helper"></i>
+                                                                Hay un transito medio de Motociclistas y Peatones en la Ruta
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P53" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="3" data-idValor="3">
+                                                                <i class="input-helper"></i>
+                                                                Hay un alto transito de Motociclistas, Ciclistas en la ruta
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <h4>9- Numero de Vehículos y Pasajeros</h4>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P54" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="3" data-idValor="1">
+                                                                <i class="input-helper"></i>
+                                                                1 vehículo con 1 persona 
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P55" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="3" data-idValor="2">
+                                                                <i class="input-helper"></i>
+                                                                1 vehículo con 2 ó más personas 
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P56" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="3" data-idValor="3">
+                                                                <i class="input-helper"></i>
+                                                                2 ó + vehículos con 1 persona por vehículos 
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P57" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="3" data-idValor="4">
+                                                                <i class="input-helper"></i>
+                                                                2 ó + vehículos con 2 ó + personas por vehículos 
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <h4>10 - Aprobación Conductor y Vehículo</h4>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P58" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="3" data-idValor="1">
+                                                                <i class="input-helper"></i>
+                                                                Cumple a cabalidad con el proceso de validación
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P59" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="3" data-idValor="2">
+                                                                <i class="input-helper"></i>
+                                                                Cumple parcialmente con la validación
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox m-b-15">
+                                                            <label>
+                                                                <input id="txtFormato1_P60" type="checkbox" value="" class="chktFormato1_Factores guardar" data-Factor="3" data-idValor="3">
+                                                                <i class="input-helper"></i>
+                                                                No fue validado
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body card-padding text-center">
+                                            <h5>VALORACIÓN DEL RIESGO DEL VIAJE</h5>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <h5>FACTORES FISICOS</h5>    
+                                                    <h1 id="lblFormato1_Valoracion_F1">0</h1>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <h5>FACTORES HUMANOS</h5>    
+                                                    <h1 id="lblFormato1_Valoracion_F2">0</h1>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <h5>OTROS FACTORES DE RIESGO</h5>    
+                                                    <h1 id="lblFormato1_Valoracion_F3">0</h1>
+                                                </div>
+                                                <div id="cntFormato1_Valoracion_Total" class="col-sm-3 bgm-green">
+                                                    <h5 class="c-white">TOTAL</h5>    
+                                                    <h1 class="c-white" id="lblFormato1_Valoracion_Total">0</h1>
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                    <div class="col-sm-12 text-center">
+                                        <div class="col-sm-3">
+                                            <div class="card">
+                                                <div class="card-header cw-header bgm-green c-white">
+                                                    Nivel 1 - Riesgo Bajo
+                                                </div>
+                                                <div class="card-body card-padding">
+                                                    <p>Evaluación  < 12<br>Aprobación como mínimo del Supervisor<br><br></p>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="card">
+                                                <div class="card-header cw-header bgm-yellow c-white">
+                                                    Nivel 2 - Riesgo Medio
+                                                </div>
+                                                <div class="card-body card-padding">
+                                                    <p>Evaluación entre 12 y 15<br>Aprobación como mínimo del<br>Gerente del proyecto</p>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="card">
+                                                <div class="card-header cw-header bgm-red c-white">
+                                                    Nivel 3 - Riesgo Alto
+                                                </div>
+                                                <div class="card-body card-padding">
+                                                    <p>Evaluación entre 16 y 24<br>Aprobación como mínimo del<br>Director del Área</p>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="card">
+                                                <div class="card-header cw-header bgm-black c-white">
+                                                    Nivel 4 - Riesgo Muy Alto
+                                                </div>
+                                                <div class="card-body card-padding">
+                                                    <p>Evaluación >=25<br>Presidente Colombia<br><span class="c-red">SOLO EMERGENCIAS / CONTINGENCIAS</span></p>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-header">
+                                        <h2>D. Información Básica de conductores y vehículos</h2>
+                                    </div>
+                                </div>
+                                <div class="card-body card-padding">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-6 table-responsive">
+                                                <table id="tblFormato1_Conductores" class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Nombre del Conductor</th>
+                                                            <th>Tipo de Vehículo /GPS</th>
+                                                            <th>Numero de Placas</th>
+                                                            <th><button type="button" class="btn palette-Cyan bg waves-effect btnFormato1_AgregarFila"><i class="zmdi zmdi-collection-plus"></i></button></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control tGuardar input-sm" placeholder="Nombre del Conductor">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control tGuardar input-sm" placeholder="Tipo de Vehiculo o GPS">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control tGuardar input-sm" placeholder="Numero de Placa">
+                                                                </div>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <div class="col-sm-6 table-responsive">
+                                                <table id="tblFormato1_Pasajeros" class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Nombre del Pasajero(s)</th>
+                                                            <th>Número de Contacto</th>
+                                                            <th><button type="button" class="btn palette-Cyan bg waves-effect btnFormato1_AgregarFila"><i class="zmdi zmdi-collection-plus"></i></button></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control tGuardar input-sm" placeholder="Nombre del Pasajero">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control tGuardar input-sm" placeholder="Numero de Contacto">
+                                                                </div>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <div class="col-sm-12 table-responsive">
+                                                <table id="tblFormato1_PuntosDeContacto" class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Ruta y Puntos de Contacto</th>
+                                                            <th>Contacto</th>
+                                                            <th>Hora Estimada</th>
+                                                            <th>Hora Real de Contacto</th>
+                                                            <th>Responsable Control</th>
+                                                            <th>Comentarios</th>
+                                                            <th><button type="button" class="btn palette-Cyan bg waves-effect btnFormato1_AgregarFila"><i class="zmdi zmdi-collection-plus"></i></button></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control tGuardar input-sm" placeholder="Ruta y punto de Contacto">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control tGuardar input-sm" placeholder="Contacto">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control tGuardar input-sm" placeholder="Hora Estimada">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control tGuardar input-sm" placeholder="Hora Real de Contacto">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control tGuardar input-sm" placeholder="Responsable Control">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="fg-line">
+                                                                    <textarea class="form-control tGuardar input-sm" placeholder="Comentarios"></textarea>
+                                                                </div>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="form-label">Observaciones / Recomendaciones:</label>
+                                                    <div class="fg-line">
+                                                        <textarea id="txtFormato1_P64" class="form-control guardar input-sm" rows="5" placeholder="Comentarios"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body card-padding">
+                                    <button class="btn btn-success btn-lg btn-block text-center">GUARDAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                    
+                </div>
+            </section>
+
+            <footer id="footer">
+                <!--Copyright &copy; 2015 Material Admin-->
+
+                <ul class="f-menu">
+                    <img src="img/wsplogo_gris.png" alt="">
+                </ul>
+            </footer>
+
+        </section>
+
+        <!-- Page Loader -->
+        <div class="page-loader palette-Teal bg">
+            <div class="preloader pl-xl pls-white">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20"/>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Javascript Libraries -->
+        <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
+        <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+        <script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>	
+
+        <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+        <script src="vendors/bower_components/moment/min/local.es.js"></script>
+        <!--<script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>-->
+        <script src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+        <script src="vendors/sweetalert/sweetalert.min.js"></script>
+
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+        <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+
+        <!--
+        <script src="js/charts.js"></script>
+        -->
+
+        <script src="js/functions.js"></script>
+        <script src="js/actions.js"></script>
+
+        <script src="customJS/funciones.js"></script>
+
+        <script src="customJS/home.js"></script>
+
+        <script>
+            $(document).on("ready", function()
+            {
+
+
+            });
+        </script>
+        
+
+
+    </body>
+  </html>
